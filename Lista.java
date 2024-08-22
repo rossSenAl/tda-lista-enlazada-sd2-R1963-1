@@ -56,8 +56,23 @@ public class Lista implements ILista {
 
     @Override
     public String recorrerLista() {
+        String recorridoString = "";
+        if (estaVacia()) {
+            return "No se puede recorrer la lista, ya que esta vacia.";
+        }
+        Nodo auxNodo = cabeza;
+        while (auxNodo != null) {
+            recorridoString = recorridoString + auxNodo.getDato() + " ";
+            auxNodo = auxNodo.getEnlace();
+        }
+        return recorridoString;
+    }
 
-        return null;
+    // TODO : Implementar el metodo recorrer lista, para hoy 22/08/2024
+    // practica en clase
+    @Override
+    public boolean seEncuentraElemento(Object elementoaEncontrar) {
+        return false;
     }
 
 }

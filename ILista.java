@@ -7,6 +7,8 @@ public interface ILista {
 
     Nodo buscarElemento(Object elementoaBuscar);
 
+    boolean seEncuentraElemento(Object elementoaEncontrar);
+
     String recorrerLista();
 
     boolean estaVacia();
