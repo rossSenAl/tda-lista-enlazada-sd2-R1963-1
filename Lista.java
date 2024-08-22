@@ -72,6 +72,22 @@ public class Lista implements ILista {
     // practica en clase
     @Override
     public boolean seEncuentraElemento(Object elementoaEncontrar) {
+        if (estaVacia()) {
+            System.out.println("No se pudo encontrar el elemento");
+            return false;
+        }
+        if (!(elementoaEncontrar instanceof Integer)) { // Si es un String u otro tipo, se mostrará un mensaje de error.
+            System.out.println("Error: El elemento a buscar debe ser un número entero.");
+            return false; 
+        }
+
+        Nodo actual = cabeza;
+        while (actual != null) {
+            if (actual.getDato().equals(elementoaEncontrar)) {
+                return true;
+            }
+            actual = actual.getEnlace();
+        }
         return false;
     }
 
