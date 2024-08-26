@@ -24,5 +24,7 @@ public class TestLista {
         boolean datoEncontrado = listaNumeros.seEncuentraElemento("");
         System.out.println(datoEncontrado);
         
+        Nodo buscarElementNodo = listaNumeros.buscarElemento(12);
+        System.out.println(buscarElementNodo);
     }
 }

@@ -24,6 +24,20 @@ public class Lista implements ILista {
 
     @Override
     public Nodo buscarElemento(Object elementoaBuscar) {
+        if (estaVacia()) {
+            System.out.println("La lista está vacía, no se puede buscar el elemento.");
+            return null;
+        }
+
+        Nodo actual = cabeza;
+        while (actual != null) {
+            if (actual.getDato().equals(elementoaBuscar)) {
+                return actual;
+            }
+            actual = actual.getEnlace();
+        }
+
+        System.out.println("El elemento " + elementoaBuscar + " no se encuentra en la lista.");
         return null;
     }
 
@@ -78,7 +92,7 @@ public class Lista implements ILista {
         }
         if (!(elementoaEncontrar instanceof Integer)) { // Si es un String u otro tipo, se mostrará un mensaje de error.
             System.out.println("Error: El elemento a buscar debe ser un número entero.");
-            return false; 
+            return false;
         }
 
         Nodo actual = cabeza;
